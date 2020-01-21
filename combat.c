@@ -7,6 +7,7 @@ int main() {
 	int monstreDmg = 15;
 	int playerDmg = 30;
 	int playerAction = 0;
+	int damage = 0;
 	
 	
 	while (MonsterHP>0 && PlayerHP>0) {
@@ -18,16 +19,25 @@ int main() {
 			printf("%d\n", playerAction);
 		}
 		
-		printf("HP:%d\n", MonsterHP);
-		MonsterHP -= playerDmg;
-		printf("Le monstre subit %d points de degats\n", playerDmg);
-		printf("HP:%d\n", MonsterHP);
+		if (playerAction == 1) {
+			printf("HP Monstre:%d\n", MonsterHP);
+			MonsterHP -= playerDmg;
+			printf("Le monstre subit %d points de degats\n", playerDmg);
+			printf("HP Monstre:%d\n", MonsterHP);
+		} else if (playerAction == 2) {
+			printf("Vous vous recroquevillez en position defensive\n");
+		}
 		
 		if (MonsterHP >0) {
 			printf("Hp Joueur : %d\n", PlayerHP);
-			PlayerHP -= monstreDmg;
-			printf("Vous subissez %d points de degats\n", monstreDmg);
-			printf("HP: %d\n", PlayerHP);
+				if (playerAction == 2) {
+					damage = monstreDmg/4;
+				} else {
+					damage = monstreDmg;
+				}
+				PlayerHP -= damage;
+				printf("Vous subissez %d points de degats\n", damage);
+			printf("Hp Joueur: %d\n", PlayerHP);
 		}
 		printf("#############################\n");
 		tour += 1;
