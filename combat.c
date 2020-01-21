@@ -2,7 +2,7 @@
 
 int main() {
 	int tour = 1;
-	int MonsterHP = 160;
+	int MonsterHP = 140;
 	int damage = 20;
 	
 	while (MonsterHP>0) {
