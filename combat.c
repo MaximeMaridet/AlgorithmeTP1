@@ -1,10 +1,20 @@
 #include <stdio.h>
 
 int main() {
+	int tour = 1;
+	int MonsterHP = 140;
+	int damage = 20;
 	
-	printf("HP:100\n");
-	printf("Vous subissez 20 points de dégats\n");
-	printf("HP:80\n");
+	while (MonsterHP>0) {
+		printf("Tour %d\n", tour);
+		printf("HP:%d\n", MonsterHP);
+		MonsterHP -= damage;
+		printf("Vous subissez %d points de degats\n", damage);
+		printf("HP:%d\n", MonsterHP);
+		
+		printf("#############################\n");
+		tour += 1;
+	}
 	
 	return 0;
 }
