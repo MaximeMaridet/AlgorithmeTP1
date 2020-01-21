@@ -6,9 +6,17 @@ int main() {
 	int tour = 1;
 	int monstreDmg = 15;
 	int playerDmg = 30;
+	int playerAction = 0;
+	
 	
 	while (MonsterHP>0 && PlayerHP>0) {
 		printf("Tour %d\n", tour);
+		
+		printf("(1) Attaquer (2) Defendre\n");
+		while (playerAction != 1 && playerAction != 2) {
+			scanf("%d", &playerAction);
+			printf("%d\n", playerAction);
+		}
 		
 		printf("HP:%d\n", MonsterHP);
 		MonsterHP -= playerDmg;
@@ -23,6 +31,7 @@ int main() {
 		}
 		printf("#############################\n");
 		tour += 1;
+		playerAction = 0;
 	}
 	
 	if (PlayerHP <= 0) {
